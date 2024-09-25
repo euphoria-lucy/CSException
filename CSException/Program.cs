@@ -53,9 +53,21 @@ namespace CSException
 
         static void Main(string[] args)
         {
-            Box b1 = new Box(10, 10);
-            Console.WriteLine("Area : {0}", b1.Area);
-            b1.Width = 0;
+            try
+            {
+                Box b1 = new Box(10, 10);
+                Console.WriteLine("Area : {0}", b1.Area);
+                b1.Width = 0;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+            finally
+            {
+                Console.WriteLine("프로그램 종료");
+
+            }
         }
     }
 }
